@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Aerospace Psychiatric Association</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<header class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/aspalogo.png" alt="AsPA logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">AsPA</span>
+          <span class="nav-brand-sub">Aerospace Psychiatric Association</span>
+        </div>
+      </a>
+
+      <div class="nav-right">
+        <nav aria-label="Primary">
+          <ul class="nav-links">
+            <li><a href="about.html">About AsPA</a></li>
+            <li><a href="events.html" class="active" aria-current="page">Events</a></li>
+          </ul>
+        </nav>
+        <a href="membership.html" class="btn btn--gold">Become a Member</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav(this)">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <a href="about.html">About AsPA</a>
+    <a href="events.html" class="active" aria-current="page">Events</a>
+    <a href="membership.html" class="btn btn--gold">Become a Member</a>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════════ -->
+<section class="page-hero" aria-labelledby="page-heading">
+  <div class="container">
+    <span class="eyebrow eyebrow--gold">Events</span>
+    <h1 class="page-hero-title" id="page-heading">Meetings &amp; Events</h1>
+    <p class="page-hero-body">
+      AsPA convenes its members at major aerospace medicine conferences worldwide and hosts its own meetings throughout the year.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     UPCOMING EVENTS
+══════════════════════════════════════════════════════════ -->
+<section class="section-mv" id="upcoming" aria-labelledby="upcoming-heading">
+  <div class="container">
+    <h2 class="section-title" id="upcoming-heading">Upcoming Events</h2>
+    <div class="gold-rule"></div>
+
+    <div class="upcoming-list">
+      <div class="upcoming-row">
+        <div class="event-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-400)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="event-info">
+          <div class="event-title">Annual Symposium</div>
+          <div class="event-sub">AsPA's flagship annual event</div>
+        </div>
+        <div class="event-meta">
+          <div class="event-badge event-badge--conference">Conference</div>
+          <span class="event-date">Date TBD</span>
+        </div>
+      </div>
+
+      <div class="upcoming-row">
+        <div class="event-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-400)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="event-info">
+          <div class="event-title">Members Meeting</div>
+          <div class="event-sub">Quarterly update for members &amp; board</div>
+        </div>
+        <div class="event-meta">
+          <div class="event-badge event-badge--members">Members</div>
+          <span class="event-date">Date TBD</span>
+        </div>
+      </div>
+
+      <div class="upcoming-row">
+        <div class="event-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy-400)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="event-info">
+          <div class="event-title">Event Placeholder</div>
+          <div class="event-sub">[Event name and description TBD]</div>
+        </div>
+        <div class="event-meta">
+          <div class="event-badge event-badge--tbd">TBD</div>
+          <span class="event-date">Date TBD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ══════════════════════════════════════════════════════════
+     PAST EVENTS
+══════════════════════════════════════════════════════════ -->
+<section class="section-what" id="past" aria-labelledby="past-heading">
+  <div class="container">
+    <h2 class="section-title" id="past-heading">Past Events</h2>
+    <div class="gold-rule"></div>
+
+    <div class="past-events">
+
+      <!-- ASMA 2025 -->
+      <article class="past-event">
+        <div class="past-event-text">
+          <span class="eyebrow eyebrow--gold">June 2025 · Atlanta</span>
+          <h3 class="past-event-title">AsMA 2025 — Inaugural Meeting</h3>
+          <p class="past-event-body">
+            AsPA held its inaugural meeting during AsMA 2025 at the Hyatt Regency Atlanta on Wednesday, June 4, from 2&ndash;4&nbsp;PM EDT. Dr.&nbsp;Nick Kanas, MD presented <em>&ldquo;A Career in Space Behavioral Health Research: Past, Present and Future,&rdquo;</em> and was presented with Honorary Membership by Dr.&nbsp;Philip Brady alongside Founding Officers Dr.&nbsp;C.&nbsp;Dukes, Dr.&nbsp;P.&nbsp;Brady, and Dr.&nbsp;B.&nbsp;Spyropoulos.
+          </p>
+        </div>
+
+        <div class="event-carousel" data-carousel>
+          <div class="event-carousel-frame">
+            <div class="event-carousel-slide is-active" data-caption="Dr. Nick Kanas">
+              <img src="assets/asma-2025-1.jpg" alt="Dr. Nick Kanas at AsMA 2025">
+            </div>
+            <div class="event-carousel-slide" data-caption="Dr. Philip Brady presents Dr. Kanas with Honorary Membership">
+              <img src="assets/asma-2025-2.jpg" alt="Dr. Brady presenting Dr. Kanas with Honorary Membership">
+            </div>
+            <div class="event-carousel-slide" data-caption="Dr. Kanas with Founding Officers Dr. C. Dukes, Dr. P. Brady, and Dr. B. Spyropoulos">
+              <img src="assets/asma-2025-3.jpg" alt="Dr. Kanas with the AsPA Founding Officers">
+            </div>
+            <button class="event-carousel-btn event-carousel-btn--prev" aria-label="Previous photo" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="event-carousel-btn event-carousel-btn--next" aria-label="Next photo" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="event-carousel-caption" aria-live="polite"></div>
+
+          <div class="event-carousel-dots" role="tablist" aria-label="Photo navigation">
+            <button class="event-carousel-dot is-active" type="button" aria-label="Photo 1"></button>
+            <button class="event-carousel-dot" type="button" aria-label="Photo 2"></button>
+            <button class="event-carousel-dot" type="button" aria-label="Photo 3"></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ICASM 2025 -->
+      <article class="past-event">
+        <div class="past-event-text">
+          <span class="eyebrow eyebrow--gold">2025</span>
+          <h3 class="past-event-title">ICASM 2025</h3>
+          <p class="past-event-body">
+            AsPA was represented at the International Congress of Aviation and Space Medicine in 2025, joining the global aerospace medicine community for sessions on flight crew mental health, fitness for duty, and the psychiatric demands of the modern aviation environment. ***
+          </p>
+        </div>
+
+        <div class="event-carousel" data-carousel>
+          <div class="event-carousel-frame">
+            <div class="event-carousel-slide is-active" data-caption="">
+              <img src="assets/icasm-2025-1.jpg" alt="ICASM 2025">
+            </div>
+            <div class="event-carousel-slide" data-caption="">
+              <img src="assets/icasm-2025-2.jpg" alt="ICASM 2025">
+            </div>
+            <div class="event-carousel-slide" data-caption="">
+              <img src="assets/icasm-2025-3.jpg" alt="ICASM 2025">
+            </div>
+            <div class="event-carousel-slide" data-caption="">
+              <img src="assets/icasm-2025-4.jpg" alt="ICASM 2025">
+            </div>
+
+            <button class="event-carousel-btn event-carousel-btn--prev" aria-label="Previous photo" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="event-carousel-btn event-carousel-btn--next" aria-label="Next photo" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <div class="event-carousel-caption" aria-live="polite"></div>
+
+          <div class="event-carousel-dots" role="tablist" aria-label="Photo navigation">
+            <button class="event-carousel-dot is-active" type="button" aria-label="Photo 1"></button>
+            <button class="event-carousel-dot" type="button" aria-label="Photo 2"></button>
+            <button class="event-carousel-dot" type="button" aria-label="Photo 3"></button>
+            <button class="event-carousel-dot" type="button" aria-label="Photo 4"></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- OSMED 2025 -->
+      <article class="past-event">
+        <div class="past-event-text">
+          <span class="eyebrow eyebrow--gold">2025</span>
+          <h3 class="past-event-title">OSMED Innovation Summit 2025</h3>
+          <p class="past-event-body">
+            Dr.&nbsp;Dukes spoke about psychological resilience and the concept of <em>Earth Attachment</em> at the OSMED Innovation Summit 2025, exploring how the bond to Earth shapes the mental health and adaptation of those traveling beyond it.
+          </p>
+        </div>
+
+        <div class="event-carousel" data-carousel>
+          <div class="event-carousel-frame">
+            <div class="event-carousel-slide is-active" data-caption="Dr. Dukes presenting at the OSMED Innovation Summit 2025">
+              <img src="assets/osmed-2025-1.jpg" alt="Dr. Dukes at OSMED 2025">
+            </div>
+          </div>
+
+          <div class="event-carousel-caption" aria-live="polite"></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img class="footer-marble" src="assets/blue-marble.jpg" alt="Earth">
+        <div class="footer-brand">
+          <img src="assets/aspalogo.png" alt="AsPA logo">
+          <div>
+            <div class="footer-brand-name">AsPA</div>
+            <div class="footer-brand-sub">Aerospace Psychiatric Association</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <div>
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links">
+            <li><a href="about.html">About AsPA</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html#newsletter">Newsletter</a></li>
+            <li><a href="membership.html">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Contact</div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Email</span>
+            <span class="footer-contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85ecebe3eac5e4f6f5f6fce6edabeaf7e2">[email&#160;protected]</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-label">Phone</span>
+            <span class="footer-contact-value">1-630-359-8138</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">2026 Aerospace Psychiatric Association. All rights reserved.</span>
+      <p class="footer-trademark">"AsPA," "aspych.org," "aeropsych.org," "aerospacepsych.org," "aspsychassn," and the AsPA logo are trademarks or the intellectual property of the Aerospace Psychiatric Association.</p>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+  function toggleNav(btn) {
+    const mobile = document.getElementById('nav-mobile');
+    const open = mobile.classList.toggle('open');
+    btn.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    mobile.setAttribute('aria-hidden', !open);
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-mobile a').forEach(a => {
+    a.addEventListener('click', () => {
+      const mobile = document.getElementById('nav-mobile');
+      const btn = document.querySelector('.nav-toggle');
+      mobile.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Carousel
+  document.querySelectorAll('[data-carousel]').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.event-carousel-slide');
+    const dots = carousel.querySelectorAll('.event-carousel-dot');
+    const caption = carousel.querySelector('.event-carousel-caption');
+    if (slides.length === 0) return;
+
+    let current = 0;
+    const setCaption = i => {
+      if (!caption) return;
+      caption.textContent = slides[i].dataset.caption || '';
+    };
+    const show = i => {
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
+      setCaption(i);
+      current = i;
+    };
+
+    carousel.querySelector('.event-carousel-btn--prev')
+      ?.addEventListener('click', () => show((current - 1 + slides.length) % slides.length));
+    carousel.querySelector('.event-carousel-btn--next')
+      ?.addEventListener('click', () => show((current + 1) % slides.length));
+    dots.forEach((d, idx) => d.addEventListener('click', () => show(idx)));
+
+    setCaption(0);
+  });
+</script>
+
+</body>
+</html>

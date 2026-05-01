@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Aerospace Psychiatric Association</title>
+<title>Membership — Aerospace Psychiatric Association</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -29,11 +29,11 @@
       <div class="nav-right">
         <nav aria-label="Primary">
           <ul class="nav-links">
-            <li><a href="about.html" class="active" aria-current="page">About AsPA</a></li>
+            <li><a href="about.html">About AsPA</a></li>
             <li><a href="events.html">Events</a></li>
           </ul>
         </nav>
-        <a href="membership.html" class="btn btn--gold">Become a Member</a>
+        <a href="#apply" class="btn btn--gold">Become a Member</a>
       </div>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" onclick="toggleNav(this)">
@@ -44,65 +44,44 @@
 
   <!-- Mobile nav -->
   <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
-    <a href="about.html" class="active" aria-current="page">About AsPA</a>
+    <a href="about.html">About AsPA</a>
     <a href="events.html">Events</a>
-    <a href="membership.html" class="btn btn--gold">Become a Member</a>
+    <a href="#apply" class="btn btn--gold">Become a Member</a>
   </div>
 </header>
 
+<!-- ══════════════════════════════════════════════════════════
+     PAGE HERO
+══════════════════════════════════════════════════════════ -->
 <section class="page-hero" aria-labelledby="page-heading">
   <div class="container">
-    <h1 class="page-hero-title" id="page-heading">About AsPA:
-    <p class="page-hero-body">AsPA was created in December, 2024 by its Founding Officers. ***
-</p>
+    <h1 class="page-hero-title" id="page-heading">Join AsPA</h1>
+    <p class="page-hero-body">
+      Membership is open to professionals and trainees from all medical specialties and allied health fields, as well as non-clinicians actively engaged or interested in the human side of aerospace medicine.
+    </p>
   </div>
 </section>
 
 <!-- ══════════════════════════════════════════════════════════
-     OFFICERS
+     WHY JOIN
 ══════════════════════════════════════════════════════════ -->
-<section class="section-mv" aria-labelledby="officers-heading">
+<section class="section-what" aria-labelledby="why-heading">
   <div class="container">
-    <h2 class="section-title" id="officers-heading">Officers</h2>
-    <div class="gold-rule"></div>
-
-    <div class="officers-grid">
-
-      <div class="card card--accent officer-card">
-        <div class="officer-avatar" aria-hidden="true">CD</div>
-        <span class="eyebrow">President</span>
+    <div class="what-grid">
+      <div class="what-text">
+        <h2 class="section-title" id="why-heading">Help shape a growing field.</h2>
         <div class="gold-rule"></div>
-        <p class="officer-name">Charles H. Dukes, MD</p>
-        <ul class="officer-bio">
-          <li>Clinical Associate Professor and Aerospace Psychiatrist at the University of Oklahoma College of Medicine</li>
-          <li>Consultant for VAST Space</li>
-          <li>Former psychiatrist at NASA</li>
-        </ul>
+        <p>
+          AsPA welcomes both established practitioners and those just beginning their training, recognizing that the future of the field will be built by every level of contributor.
+        </p>
       </div>
 
-      <div class="card card--accent officer-card">
-        <div class="officer-avatar" aria-hidden="true">PB</div>
-        <span class="eyebrow">Vice-President</span>
-        <div class="gold-rule"></div>
-        <p class="officer-name">Philip Brady, MB BCh BAO MSc MInstP MRCPsych MCPsychl</p>
-        <ul class="officer-bio">
-          <li>Consultant Forensic Psychiatrist</li>
-          <li>Consultant General Adult Psychiatrist</li>
-          <li>Clinical Lecturer in the Discipline of Psychiatry at Trinity College Dublin</li>
-        </ul>
-      </div>
-
-      <div class="card card--accent officer-card">
-        <div class="officer-avatar" aria-hidden="true">BS</div>
-        <span class="eyebrow">Secretary-Treasurer</span>
-        <div class="gold-rule"></div>
-        <p class="officer-name">Basil P. Spyropoulos, MD</p>
-        <ul class="officer-bio">
-          <li>Aerospace Psychiatrist in the Chicago suburbs</li>
-          <li>Chair of the Civil Aviation Medical Association's Space Medicine Committee</li>
-        </ul>
-      </div>
-
+      <ul class="why-list">
+        <li>Connect with a global network of aerospace mental health professionals</li>
+        <li>Access peer-reviewed research and emerging clinical guidelines</li>
+        <li>Attend AsPA events and contribute to the direction of the field</li>
+        <li>Eligibility — for Active members — to vote and serve on the Board of Directors</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -110,45 +89,72 @@
 <hr class="divider">
 
 <!-- ══════════════════════════════════════════════════════════
-     CORE VALUES
+     MEMBERSHIP TIERS
 ══════════════════════════════════════════════════════════ -->
-<section class="section-what" aria-labelledby="values-heading">
+<section class="section-mv" aria-labelledby="tiers-heading">
   <div class="container">
-    <h2 class="section-title" id="values-heading">Core Values</h2>
-    <div class="gold-rule"></div>
+    <h2 class="section-title" id="tiers-heading">Membership Options</h2>
+    <div class="tiers-grid">
 
-    <div class="values-grid">
-
-      <div class="card card--accent value-card">
-        <p class="value-name">Excellence</p>
+      <article class="card card--accent tier-card">
+        <span class="eyebrow">Active</span>
         <div class="gold-rule"></div>
-        <p class="value-desc">Commitment to the highest standards of clinical practice, research, policy and education in aerospace mental health.</p>
-      </div>
+        <p class="tier-price">$75<span class="tier-price-unit">/ year</span></p>
+        <p class="tier-desc">
+          Psychiatrists fully trained and/or certified by institutions and specialty boards recognized by AsMA and the Board of Directors. Includes full voting privileges and eligibility to serve on the Board of Directors.
+        </p>
+      </article>
 
-      <div class="card card--accent value-card">
-        <p class="value-name">Innovation</p>
+      <article class="card card--accent tier-card">
+        <span class="eyebrow">Affiliate</span>
         <div class="gold-rule"></div>
-        <p class="value-desc">Embracing the best modern and informed methods to address the mental health needs of aerospace personnel.</p>
-      </div>
+        <p class="tier-price">$50<span class="tier-price-unit">/ year</span></p>
+        <p class="tier-desc">
+          Non-psychiatrist physicians, psychologists, nurse practitioners, nurses, allied health professionals, and professionals in STEM-based and other fields which support the goals and activities of aerospace psychiatry.
+        </p>
+      </article>
 
-      <div class="card card--accent value-card">
-        <p class="value-name">Compassion</p>
+      <article class="card card--accent tier-card">
+        <span class="eyebrow">International</span>
         <div class="gold-rule"></div>
-        <p class="value-desc">Promoting empathetic individualized care to support the psychological well-being of aerospace personnel.</p>
-      </div>
+        <p class="tier-price">$50<span class="tier-price-unit">/ year</span></p>
+        <p class="tier-desc">
+          Fully trained and/or certified individuals who would otherwise fit into the Active or Affiliate category but who reside and practice outside the United States. Privileges follow their corresponding category.
+        </p>
+      </article>
 
-      <div class="card card--accent value-card">
-        <p class="value-name">Collaboration</p>
+      <article class="card card--accent tier-card">
+        <span class="eyebrow">Trainee</span>
         <div class="gold-rule"></div>
-        <p class="value-desc">Fostering interdisciplinary partnerships to integrate complementary perspectives and enhance mental health outcomes.</p>
-      </div>
+        <p class="tier-price">No Fee</p>
+        <p class="tier-desc">
+          Students and candidates in post-graduate clinical programs (MD/DO, Masters, Doctoral, Fellowship) whose training comprises 50% or more of their professional activity. Not assessed membership dues.
+        </p>
+      </article>
 
-      <div class="card card--accent value-card">
-        <p class="value-name">Resilience</p>
-        <div class="gold-rule"></div>
-        <p class="value-desc">Promoting psychological resilience with respect to the demands of space flight and aviation.</p>
-      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════════════════════════════
+     APPLY
+══════════════════════════════════════════════════════════ -->
+<section class="section-apply" id="apply" aria-labelledby="apply-heading">
+  <div class="container">
+    <div class="apply-panel">
+      <h2 class="section-title section-title--light" id="apply-heading">Ready to Become a Member?</h2>
+      <div class="gold-rule"></div>
+      <p class="apply-body">
+        Submit your application through our online form. A board member will follow up to confirm your category and walk you through next steps.
+      </p>
+      <div class="apply-cta">
+        <a href="https://forms.gle/f4TS8F7ygeDPjmvK6" class="btn btn--gold" target="_blank" rel="noopener">Open Application Form &rarr;</a>
+      </div>
+      <p class="apply-help">
+        Questions? Contact any member of the Board of Directors, email
+        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85ecebe3eac5e4f6f5f6fce6edabeaf7e2">[email&#160;protected]</a>,
+        or call +1-630-359-8138.
+      </p>
     </div>
   </div>
 </section>

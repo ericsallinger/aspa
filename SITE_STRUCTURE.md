@@ -1,11 +1,13 @@
 # AsPA Website — Structure Reference
 
-The site is now a **two-page** static site that shares a single stylesheet:
+The site is a **four-page** static site that shares a single stylesheet:
 
 | File | Purpose |
 |---|---|
-| [AsPA Website.html](AsPA%20Website.html) | Home page — hero, mission/vision, what is aerospace psychiatry, get involved |
+| [index.html](index.html) | Home page — hero, mission/vision, what is aerospace psychiatry, get involved |
 | [about.html](about.html) | About page — page hero, officers (with bios/disclosures), core values |
+| [membership.html](membership.html) | Membership page — page hero, why-join, tier cards, apply CTA |
+| [events.html](events.html) | Events page — page hero, upcoming events list, past events with photo carousels |
 | [style.css](style.css) | All shared styling (design tokens + every component) |
 
 ## Design Tokens (`style.css`, lines 4–39)
@@ -56,27 +58,26 @@ The site is now a **two-page** static site that shares a single stylesheet:
 
 ---
 
-## Shared Sections (used by both pages)
+## Shared Sections (used by every page)
 
 ### Navigation — `<header class="site-nav">`
-**CSS:** `style.css` lines 284–401
+**CSS:** `style.css` lines 284–418
 
 | Element | Class | Notes |
 |---|---|---|
-| Sticky header | `.site-nav` | `z-index: 100`, white bg, bottom border |
+| Sticky header | `.site-nav` | `z-index: 100`, navy bg, white-bottom border |
 | Inner flex row | `.nav-inner` | 64px height (56px @≤1024px) |
 | Logo + name | `.nav-brand` | `assets/aspalogo.png` · `.nav-brand-name` (20px display) · `.nav-brand-sub` (8.5px caps) |
 | Desktop links + CTA | `.nav-right` | Hidden at ≤1024px |
-| Nav link list | `.nav-links` | Active link gets gold bottom border |
+| Nav link list | `.nav-links` | Active link gets white pill (rounded-top) |
 | Hamburger button | `.nav-toggle` | Hidden at >1024px; 3 `<span>` bars animate to ×  |
 | Mobile drawer | `.nav-mobile` | `display:none` → `display:flex` via `.open` class |
 | **JS toggle** | `toggleNav()` | Inline `<script>` in each page |
 
-**Nav links:** About AsPA → `about.html` · Events → `#events` (home) · Newsletter → `#newsletter` (home) · CTA → `#membership` (home).
-On `about.html`, in-page anchors are written as `AsPA%20Website.html#events`, etc., so they jump to the right section on the home page.
+**Nav links:** About AsPA → `about.html` · Events → `events.html` · Newsletter → `index.html#newsletter` · CTA → `membership.html`.
 
 ### Footer — `<footer class="site-footer">`
-**CSS:** `style.css` lines 749–867
+**CSS:** `style.css` lines 767–894
 
 | Element | Class | Notes |
 |---|---|---|
@@ -91,102 +92,115 @@ On `about.html`, in-page anchors are written as `AsPA%20Website.html#events`, et
 
 ---
 
-## Home page — `AsPA Website.html`
+## Home page — `index.html`
 
-### 1. Hero — `<section class="hero">` (lines 58–124)
-**CSS:** `style.css` lines 406–490
+### 1. Hero — `<section class="hero hero--tx-b">` (lines 58–119)
+**CSS:** `style.css` lines 422–509 (+ `.hero-events` styles 60–150, `.hero--tx-b .hero-events` 1038–1043)
 
 | Element | Class | Notes |
 |---|---|---|
-| Section bg | `.hero` | Navy gradient `155deg`, `--section-v` top padding |
+| Section bg | `.hero` | `assets/navy-couch.png` cover bg, `--section-v` top padding, 80px bottom |
 | Star-field overlay | `.hero::before` | 10 `radial-gradient` dots, `pointer-events:none` |
 | Two-column grid | `.hero-inner` | `1fr auto`, 64px gap; collapses to 1 col at ≤1024px |
-| Headline | `h1` | Cormorant, `clamp(30px, 5.5vw, 50px)`, `<em>` = gold-light italic |
-| Body copy | `.hero-body` | 17px 300wt, `--navy-200` |
+| Headline | `h1` | Cormorant, `clamp(30px, 5.5vw, 50px)`, `<em>` = gold-light italic, `white-space: nowrap` |
+| Body copy | `.hero-body` | 17px 300wt, `--navy-200`, max-width 500px |
 | CTA row | `.hero-ctas` | `btn--gold` ("Become a Member") + `btn--ghost-light` ("Learn about AsPA" → `about.html`) |
-| Right column | `.hero-events` | 340px wide event panel — see below |
+| Right column | `.hero-events` | 340px wide event panel (navy bg via `.hero--tx-b` modifier) |
 
 **Hero events panel** (`.hero-events`, CSS lines 60–150):
 3 `.event-row` cards, each: `.event-icon` + `.event-info` (title/sub) + `.event-meta` (badge/date).
 Badges: `.event-badge--conference` (gold) · `.event-badge--members` (navy-600) · `.event-badge--tbd` (navy-200).
 
-### 2. Mission + Vision — `<section class="section-mv" id="about">` (lines 129–153)
-**CSS:** `style.css` lines 495–518
+### 2. Mission + Vision — `<section class="section-mv" id="about">` (lines 125–148)
+**CSS:** `style.css` lines 514–537
 
-| Element | Class | Notes |
-|---|---|---|
-| Section wrapper | `.section-mv` | White bg, `--section-v` padding |
-| Card grid | `.mv-grid` | `1fr 1fr`, 24px gap; collapses at ≤1024px |
-| Each card | `.card.card--accent.mv-card` | 32px/36px padding |
-| Card content | `.eyebrow` · `.gold-rule` · `h3` · `.mv-card-body` | Standard pattern |
+### 3. What is Aerospace Psychiatry — `<section class="section-what">` (lines 155–204)
+**CSS:** `style.css` lines 542–590
 
-> The `id="about"` is now legacy — the nav "About AsPA" link points to `about.html`. The id is kept harmless but is no longer a scroll target.
+Pillars: Research · Treatment · Aviation · Spaceflight (`.what-pillars` is 2×2 grid of `.pillar.card`).
 
-### 3. What is Aerospace Psychiatry — `<section class="section-what">` (lines 160–210)
-**CSS:** `style.css` lines 523–571
+### 4. Get Involved — `<section class="section-involve" id="membership">` (lines 211–259)
+**CSS:** `style.css` lines 595–762
 
-| Element | Class | Notes |
-|---|---|---|
-| Section wrapper | `.section-what` | `--off-white` bg, `--section-v` padding |
-| Two-column grid | `.what-grid` | `1fr 1fr`, 64px gap; collapses at ≤1024px |
-| Left: text | `.what-text` | Eyebrow · H2 · gold-rule · 3 `<p>` paragraphs |
-| Right: pillars | `.what-pillars` | `2×2` grid of `.pillar.card` tiles |
-| Each pillar | `.pillar` | SVG icon · `.pillar-title` (Cormorant 20px) · `.pillar-sub` (12px body) |
-
-**Pillars:** Research · Treatment · Aviation · Spaceflight
-
-### 4. Get Involved — `<section class="section-involve" id="membership">` (lines 217–269)
-**CSS:** `style.css` lines 576–744
-
-| Element | Class | Notes |
-|---|---|---|
-| Section wrapper | `.section-involve` | White bg, slightly reduced vertical padding |
-| Three-panel grid | `.involve-grid` | `1fr 1fr`, 2 rows; left panel spans both rows |
-| Left: Membership | `.involve-membership` | Navy bg, left spans `grid-row: 1/3` |
-| Membership content | `.membership-eyebrow` · `.gold-rule` · `.membership-title` · `.membership-bullets` · `.membership-cta` | Bullet `::before` = gold dash |
-| Top-right: Newsletter | `.involve-right` `id="newsletter"` | Eyebrow · gold-rule · body · `.newsletter-form` (email input + Subscribe btn) · `.newsletter-link` |
-| Bottom-right: Contact | `.involve-right` | Eyebrow · gold-rule · `.contact-rows` → two `.contact-item` tiles (Email · Phone) |
-
-**Input:** `.input-field` — 14px, `--off-white` bg, focuses to white with navy-300 border
+Three-panel grid: navy `.involve-membership` left (spans 2 rows), `.involve-right` Newsletter top, `.involve-right` Contact bottom.
 
 ---
 
 ## About page — `about.html`
 
-### 1. Page hero — `<section class="page-hero">` (lines 62–69)
-**CSS:** `style.css` lines 873–908
-
-Compact navy gradient band (mirrors hero gradient + star-field but at reduced height).
-Contents: `.eyebrow.eyebrow--gold` · `.page-hero-title` (Cormorant `clamp(32px, 5vw, 48px)`) · `.page-hero-body` (16px 300wt navy-200).
-
-### 2. Officers — `<section class="section-mv">` (lines 75–106)
-**CSS:** `style.css` lines 911–957
-
-| Element | Class | Notes |
-|---|---|---|
-| Card grid | `.officers-grid` | `repeat(3, 1fr)`, 20px gap; → 1 col at ≤1024px |
-| Each card | `.card.card--accent.officer-card` | 28px padding, flex column |
-| Avatar | `.officer-avatar` | 72×72 circle, navy gradient bg, gold border, displays initials (placeholder for future photos) |
-| Eyebrow | `.eyebrow` | Officer role (President / Vice-President / Secretary-Treasurer) — recolored to `--navy-400` inside `.officer-card` |
-| Name | `.officer-name` | Cormorant 22px |
-| Credentials (optional) | `.officer-credentials` | 12px body, used when post-nominals don't fit on the name line |
-| Bio / disclosure | `.officer-bio` | 13.5px 300wt body — affiliations, current role, prior positions |
+### 1. Page hero — `<section class="page-hero">` (lines 55–61)
+### 2. Officers — `<section class="section-mv">` (lines 66–110)
+### 3. Core Values — `<section class="section-what">` (lines 117–156)
 
 **Officers:** Charles H. Dukes, MD (President) · Philip Brady (Vice-President) · Basil P. Spyropoulos, MD (Secretary-Treasurer)
+**Values:** Excellence · Innovation · Compassion · Collaboration · Resilience (5 cards, render as 3 + 2)
 
-### 3. Core Values — `<section class="section-what">` (lines 113–155)
-**CSS:** `style.css` lines 960–982
+**CSS:** page-hero lines 899–935 · officers 938–1008 · values 1011–1036.
+
+---
+
+## Membership page — `membership.html`
+
+### 1. Page hero — `<section class="page-hero">` (lines 58–65)
+### 2. Why Join — `<section class="section-what">` (lines 70–89)
+### 3. Membership Options — `<section class="section-mv">` (lines 96–139)
+### 4. Apply — `<section class="section-apply">` (lines 144–162)
+
+**Tiers:** Active ($75/yr) · Affiliate ($50/yr) · International ($50/yr) · Trainee (No Fee)
+
+**CSS:** why-list lines 1051–1075 · tiers 1077–1116 · apply panel 1118–1167.
+
+---
+
+## Events page — `events.html`
+
+### 1. Page hero — `<section class="page-hero">` (lines 60–67)
+Reuses the shared `.page-hero` styling — gold eyebrow ("Events"), Cormorant title ("Meetings & Events"), short body paragraph.
+
+### 2. Upcoming Events — `<section class="section-mv" id="upcoming">` (lines 73–125)
+**CSS:** `style.css` lines 1175–1208
 
 | Element | Class | Notes |
 |---|---|---|
-| Card grid | `.values-grid` | `repeat(3, 1fr)`, 16px gap; → 2 col @≤1024px → 1 col @≤560px |
-| Each card | `.card.card--accent.value-card` | 26px padding |
-| Title | `.value-name` | Cormorant 22px |
-| Description | `.value-desc` | 14px 300wt body |
+| Section wrapper | `.section-mv` | White bg, `--section-v` padding |
+| List wrapper | `.upcoming-list` | flex column, 12px gap |
+| Each row | `.upcoming-row` | White bg, `--border`, 8px radius — light-bg variant of the home-page `.event-row` |
+| Reuses | `.event-icon` · `.event-info` · `.event-title` · `.event-sub` · `.event-meta` · `.event-badge--*` · `.event-date` | Same content/structure as home-hero events panel, restyled for light bg |
 
-**Values:** Excellence · Innovation · Compassion · Collaboration · Resilience (5 cards, render as 3 + 2 row)
+The three rows mirror the home page hero panel exactly: Annual Symposium (Conference badge), Members Meeting (Members badge), Event Placeholder (TBD badge).
 
-> Disclosures are no longer a separate section — each officer's affiliations and prior positions live in their card's `.officer-bio` paragraph.
+### 3. Past Events — `<section class="section-what" id="past">` (lines 130–227)
+**CSS:** `style.css` lines 1210–1340
+
+| Element | Class | Notes |
+|---|---|---|
+| Section wrapper | `.section-what` | `--off-white` bg |
+| Stack | `.past-events` | flex column, 56px gap (64px @≤1024px) |
+| Each event | `.past-event` | grid `1fr 1.35fr`, 40px gap; collapses to 1 col @≤1024px |
+| Left text | `.past-event-text` | gold eyebrow (date) · `.past-event-title` (Cormorant 22-28px) · `.past-event-body` (15px 300wt) |
+| Right photos | `.event-carousel` | white card, border, shadow-sm |
+
+**Carousel** (`.event-carousel`):
+
+| Sub-element | Class | Notes |
+|---|---|---|
+| Image frame | `.event-carousel-frame` | 4:3 aspect-ratio, navy-50 bg |
+| Each slide | `.event-carousel-slide` | absolute-positioned, `opacity` cross-fade; `.is-active` shows it |
+| Slide image | `img` | `object-fit: cover`, fills frame |
+| Prev / next | `.event-carousel-btn--prev` / `.event-carousel-btn--next` | 40×40 navy circular buttons (34×34 @≤560px) |
+| Caption row | `.event-carousel-caption` | italic 13px, `min-height: 48px`, fed from each slide's `data-caption` (always reserved space — empty if no caption) |
+| Dot indicators | `.event-carousel-dots` → `.event-carousel-dot` | 8px gold-when-active dots |
+
+`.event-carousel:has(.event-carousel-slide:only-child)` defensively hides nav buttons + dots when there's only one image.
+
+**JS** (inline `<script>` in `events.html`): a single `[data-carousel]` initializer wires up prev/next, dot clicks, and caption updates per carousel.
+
+**Events shown:**
+- **AsMA 2025 — Inaugural Meeting** (June 2025 · Atlanta) — 4 photos with captions (Dr. Kanas; Dr. Brady honors Dr. Kanas; Dr. Kanas with Founding Officers; 4th uncaptioned)
+- **ICASM 2025** — 4 photos (no captions)
+- **OSMED Innovation Summit 2025** — 1 photo (caption: "Dr. Dukes presenting at the OSMED Innovation Summit 2025") — single-image carousel renders without nav buttons/dots
+
+**Image assets** (in `assets/`): `asma-2025-{1..4}.jpg`, `icasm-2025-{1..4}.jpg`, `osmed-2025-1.jpg`.
 
 ---
 
@@ -194,14 +208,15 @@ Contents: `.eyebrow.eyebrow--gold` · `.page-hero-title` (Cormorant `clamp(32px,
 
 | Breakpoint | Changes |
 |---|---|
-| `≤1024px` | `--section-v: 64px` · single-column hero · nav collapses to hamburger · all grids → 1 col (or 2 col for `.values-grid`) · footer stacks · `.page-hero` pads down to 48px / 56px |
-| `≤560px` | `--section-v: 48px` · further padding reduction · hero CTAs stack full-width · `.what-pillars` stays 2-col · `.values-grid` collapses to 1 col · officer/value/disclosure paddings shrink |
+| `≤1024px` | `--section-v: 64px` · single-column hero · nav collapses to hamburger · all grids → 1 col (or 2 col for `.values-grid`) · footer stacks · `.page-hero` pads down to 48px / 56px · `.past-event` → 1 col |
+| `≤560px` | `--section-v: 48px` · further padding reduction · hero CTAs stack full-width · `.what-pillars` stays 2-col · `.values-grid` collapses to 1 col · `.tiers-grid` → 1 col · carousel buttons shrink to 34×34 · `.upcoming-row` padding/font reduce |
 
 ---
 
 ## JavaScript (inline `<script>` in each page)
-| Function | Purpose |
-|---|---|
-| `toggleNav(btn)` | Opens/closes `.nav-mobile` and `.nav-toggle` via `.open` class |
-| Mobile link listener | Auto-closes mobile nav on any link click |
-| `IntersectionObserver` | Home page only — highlights active `.nav-links a` based on visible section. The about page omits this since its nav links point off-page. |
+| Function | Where | Purpose |
+|---|---|---|
+| `toggleNav(btn)` | every page | Opens/closes `.nav-mobile` and `.nav-toggle` via `.open` class |
+| Mobile link listener | every page | Auto-closes mobile nav on any link click |
+| `IntersectionObserver` | `index.html` only | Highlights active `.nav-links a` based on visible section |
+| `[data-carousel]` initializer | `events.html` only | Wires prev/next, dot clicks, and live captions for each `.event-carousel` |
